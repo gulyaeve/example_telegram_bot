@@ -23,7 +23,9 @@ async def cmd_start_user(message: types.Message):
     """
     log(INFO, f"[{message.from_user.id=}] нажал START.")
     welcome_message = await messages.get_message("welcome")
-    await message.reply(welcome_message.format((await dp.bot.get_me()).full_name))
+    bot_name = (await dp.bot.get_me()).full_name
+    user_name = message.from_user.full_name
+    await message.reply(welcome_message.format(user_name, bot_name))
     await message.answer(await messages.get_message("welcome_help_hint"))
 
 

@@ -1,4 +1,4 @@
-from .main import dp
+from .start_and_help import dp
 from .admins import dp
 from .auth import dp
 from .weather import dp
