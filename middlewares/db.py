@@ -34,8 +34,3 @@ class DBmiddleware(BaseMiddleware):
             if group.full_name != message.chat.full_name:
                 await groups.update_group_fullname(message.chat.full_name, message.chat.id)
                 log(INFO, f"Updated full_name [{message.chat.full_name}] for [{message.chat.id}]")
-
-    #     user = await users.select_user(telegram_id=message.from_user.id)
-    #     log(INFO, f"{user=}")
-    #     if user is not None:
-    #         data["id"] = str(user.id)
