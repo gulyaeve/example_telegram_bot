@@ -11,6 +11,7 @@ async def set_default_commands():
         types.BotCommand(command="/start", description="Начать работу с чат-ботом"),
         # types.BotCommand(command="/auth", description="Авторизация"),
         types.BotCommand(command="/weather", description="Узнать погоду"),
+        types.BotCommand(command="/exchange", description="Конвертер валют"),
         types.BotCommand(command="/help", description="Помощь по командам чат-бота"),
         types.BotCommand(command="/cancel", description="Отмена текущего действия"),
     ])
@@ -21,6 +22,8 @@ help_message = """<b>Команды чат-бота:</b>
     <b>/start</b> - Начать работу с ботом
         
     <b>/weather</b> - Узнать погоду
+    
+    <b>/exchange</b> - Конвертер валют
         
     <b>/help</b> - Помощь по командам чат-бота
         

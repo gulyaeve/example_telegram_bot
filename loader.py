@@ -9,6 +9,7 @@ from utils.db_api.db import Database
 from utils.db_api.usersdb import UsersDB
 from utils.db_api.messages import Messages
 from utils.admin_page_rest_api import AdminPageRestAPI
+from utils.exchange_rates_api import ExchangeRatesApi
 from utils.weather_api import OpenWeatherApi
 
 # ChatBot objects
@@ -47,6 +48,9 @@ else:
 
 # OpenWeatherApi
 weather_api = OpenWeatherApi()
+
+# ExchangeRatesAPI
+exchange_api = ExchangeRatesApi()
 
 # Logging setup
 logging.basicConfig(
