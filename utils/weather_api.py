@@ -15,12 +15,12 @@ class Weather:
     wind_speed: int
 
     def __str__(self):
-        msg = f"Погода в {self.location_name}:\n" \
-              f"Сейчас {self.description}\n" \
-              f"Температура: {self.temp}\n" \
-              f"Минимальная температура: {self.temp_min}\n" \
-              f"Максимальная температура: {self.temp_max}\n" \
-              f"Скорость ветра: {self.wind_speed}м/с\n"
+        msg = f"<b>Погода в {self.location_name}:</b>\n" \
+              f"Сейчас <i>{self.description}</i>\n" \
+              f"Температура: <i>{self.temp}</i>\n" \
+              f"Минимальная температура: <i>{self.temp_min}</i>\n" \
+              f"Максимальная температура: <i>{self.temp_max}</i>\n" \
+              f"Скорость ветра: <i>{self.wind_speed}м/с</i>\n"
         return msg
 
 
