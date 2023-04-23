@@ -4,6 +4,7 @@ from .auth import dp
 from .weather import dp
 from .exchange import dp
 from .cat import dp
+from .make_poll import dp
 
 from .any_text import dp
 

@@ -4,6 +4,8 @@ from typing import Sequence
 import asyncpg
 import asyncio
 
+from aiogram.types import InlineKeyboardButton
+
 from utils.db_api.db import Database
 
 
@@ -11,6 +13,12 @@ from utils.db_api.db import Database
 class Group:
     telegram_id: int
     full_name: str
+
+    def make_button(self):
+        return InlineKeyboardButton(
+            text=f"{self.full_name}",
+            callback_data=f"pollgroup={self.telegram_id}",
+        )
 
 
 class Groups:
