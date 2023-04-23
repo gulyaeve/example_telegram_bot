@@ -20,7 +20,7 @@ async def weather_start(message: types.Message):
 @dp.message_handler(state=WeatherStates.Location, content_types=types.ContentType.LOCATION)
 async def weather_location(message: types.Message, state: FSMContext):
     weather = await weather_api.get_weather(message.location.latitude, message.location.longitude)
-    await message.reply(str(weather))
+    await message.reply(str(weather), reply_markup=types.ReplyKeyboardRemove())
     await state.finish()
 
 
