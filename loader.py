@@ -9,6 +9,7 @@ from utils.db_api.db import Database
 from utils.db_api.usersdb import UsersDB
 from utils.db_api.messages import Messages
 from utils.admin_page_rest_api import AdminPageRestAPI
+from utils.weather_api import OpenWeatherApi
 
 # ChatBot objects
 if Config.proxy_url:
@@ -31,8 +32,6 @@ dp = Dispatcher(
     storage=storage,
 )
 
-# Database objects
-# db = Database()
 # Users from database
 users = UsersDB()
 # Messages from database
@@ -45,6 +44,9 @@ if Config.rest_link:
     admin_api = AdminPageRestAPI(bot_info.to_python())
 else:
     admin_api = None
+
+# OpenWeatherApi
+weather_api = OpenWeatherApi()
 
 # Logging setup
 logging.basicConfig(

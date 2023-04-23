@@ -27,12 +27,12 @@ class Config:
         rest_token = ""
 
     # Email auth:
-    class Email:
-        email_server = env.str("EMAIL_SERVER")
-        email_port = env.int("EMAIL_PORT")
-        sender_email = env.str("SENDER_EMAIL")
-        email_login = env.str("EMAIL_LOGIN")
-        email_password = env.str("EMAIL_PASSWORD")
+    # class Email:
+    #     email_server = env.str("EMAIL_SERVER")
+    #     email_port = env.int("EMAIL_PORT")
+    #     sender_email = env.str("SENDER_EMAIL")
+    #     email_login = env.str("EMAIL_LOGIN")
+    #     email_password = env.str("EMAIL_PASSWORD")
 
     # PostgreSQL
     class DBConfig:
@@ -52,4 +52,8 @@ class Config:
         proxy_url = env.str("PROXY_URL")
     except EnvError:
         proxy_url = ""
+
+    class OpenWeatherConfig:
+        OPENWEATHER_API_LINK = env.str("OPENWEATHER_API_LINK")
+        OPENWEATHER_API_TOKEN = env.str("OPENWEATHER_API_TOKEN")
 

@@ -23,7 +23,7 @@ class RestAPI:
                 "Content-Type": "application/json",
             }
 
-    async def _post_json(self, route: str, data: dict | None) -> dict:
+    async def post_json(self, route: str, data: dict | None) -> dict:
         """
         Send post request to host
         :param route: request link
@@ -41,7 +41,7 @@ class RestAPI:
             except Exception as e:
                 logging.warning(f"Rest api is unreachable: {e}")
 
-    async def _post_file(self, route: str, files) -> dict:
+    async def post_file(self, route: str, files) -> dict:
         """
         Send post request to host
         :param route: request link
@@ -62,16 +62,19 @@ class RestAPI:
         except Exception as e:
             logging.warning(f"Rest api is unreachable: {e}")
 
-    async def _get_json(self, route: str, params: dict | None) -> dict:
+    async def get_json(self, route: str, params: dict | None) -> dict:
         """
         Send get request to host
-        :param route: request link
+        :params: request link
         :return: json object answer from host
         """
         try:
             async with aiohttp.ClientSession(headers=self._headers) as session:
-                async with session.get(f'{self._link}{route}',
-                                       params=params if params is not None else {}) as resp:
+                async with session.get(
+                    f'{self._link}{route}',
+                    params=params if params is not None else {},
+                    ssl=False
+                ) as resp:
                     logging.info(f"{resp.status=} {self._link}{route} {params=}")
                     return await resp.json()
         except ClientConnectorError:
@@ -79,7 +82,7 @@ class RestAPI:
         except Exception as e:
             logging.warning(f"Rest api is unreachable: {e}")
 
-    async def _get_file(self, route: str) -> bytes:
+    async def get_file(self, route: str) -> bytes:
         """
         Download file from server
         :param route: request link

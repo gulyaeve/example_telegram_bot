@@ -16,7 +16,7 @@ async def help_command(message: types.Message):
 @dp.message_handler(commands=['start'])
 async def cmd_start_user(message: types.Message):
     """
-    Conversation's entry point
+    Начало общения с ботом
     """
     log(INFO, f"[{message.from_user.id=}] нажал START.")
     welcome_message = await messages.get_message("welcome")
@@ -24,13 +24,12 @@ async def cmd_start_user(message: types.Message):
     await message.answer(await messages.get_message("welcome_help_hint"))
 
 
-# You can use state '*' if you need to handle all states
 @dp.message_handler(Text(equals='cancel', ignore_case=True), state='*')
 @dp.message_handler(Text(equals='отмена', ignore_case=True), state='*')
 @dp.message_handler(state='*', commands=['cancel'])
 async def cancel_handler(message: types.Message, state: FSMContext):
     """
-    Allow user to cancel any action
+    Отмена любого действия и состояния
     """
     log(INFO, f"[{message.from_user.id=}] отменил действие.")
     await state.finish()
