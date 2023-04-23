@@ -57,3 +57,7 @@ class Config:
         OPENWEATHER_API_LINK = env.str("OPENWEATHER_API_LINK")
         OPENWEATHER_API_TOKEN = env.str("OPENWEATHER_API_TOKEN")
 
+    class ExchangeRatesConfig:
+        EXCHANGE_RATES_API_LINK = env.str("EXCHANGE_RATES_API_LINK")
+        EXCHANGE_RATES_API_TOKEN = env.str("EXCHANGE_RATES_API_TOKEN")
+

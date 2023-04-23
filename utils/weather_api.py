@@ -59,6 +59,7 @@ class OpenWeatherApi(RestAPI):
 
 
 # Тестирование API
-# api = OpenWeatherApi()
-# ans = asyncio.run(api.get_weather(55.814640, 37.404065))
-# print(str(ans))
+if __name__ == "__main__":
+    api = OpenWeatherApi()
+    ans = asyncio.run(api.get_weather(55.814640, 37.404065))
+    print(str(ans))
