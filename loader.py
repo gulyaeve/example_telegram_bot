@@ -7,6 +7,7 @@ from aiogram.contrib.fsm_storage.redis import RedisStorage2
 from config import Config
 from utils.cat_api import CatApi
 from utils.db_api.db import Database
+from utils.db_api.groupsdb import GroupsDB
 from utils.db_api.usersdb import UsersDB
 from utils.db_api.messages import Messages
 from utils.admin_page_rest_api import AdminPageRestAPI
@@ -36,6 +37,8 @@ dp = Dispatcher(
 
 # Users from database
 users = UsersDB()
+# Groups from database
+groups = GroupsDB()
 # Messages from database
 messages = Messages()
 
