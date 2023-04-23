@@ -17,6 +17,11 @@ class PollStates(StatesGroup):
 
 @dp.message_handler(ChatTypeFilter(types.ChatType.PRIVATE), commands=['make_poll'])
 async def make_poll(message: types.Message):
+    """
+    Начало создания опроса
+    @param message: telegram message
+    @return:
+    """
     await message.answer(await messages.get_message("poll_start_make"))
     await PollStates.InputOption.set()
 

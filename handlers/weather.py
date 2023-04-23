@@ -13,6 +13,11 @@ class WeatherStates(StatesGroup):
 
 @dp.message_handler(ChatTypeFilter(types.ChatType.PRIVATE), commands=['weather'])
 async def weather_start(message: types.Message):
+    """
+    Получение погоды по геолокации
+    @param message: telegram message
+    @return:
+    """
     await message.answer(await messages.get_message("weather_get_location"), reply_markup=location_button)
     await WeatherStates.Location.set()
 

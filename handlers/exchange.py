@@ -15,6 +15,11 @@ class ExchangeStates(StatesGroup):
 
 @dp.message_handler(ChatTypeFilter(types.ChatType.PRIVATE), commands=['exchange'])
 async def start_exchange(message: types.Message):
+    """
+    Начало работы с обменом валюты
+    @param message: telegram message
+    @return:
+    """
     currency_list = ['USD', 'EUR', 'RUB']
     await message.answer(
         text=await messages.get_message("exchange_select_from"),
