@@ -5,6 +5,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.redis import RedisStorage2
 
 from config import Config
+from utils.cat_api import CatApi
 from utils.db_api.db import Database
 from utils.db_api.usersdb import UsersDB
 from utils.db_api.messages import Messages
@@ -51,6 +52,9 @@ weather_api = OpenWeatherApi()
 
 # ExchangeRatesAPI
 exchange_api = ExchangeRatesApi()
+
+# CatAPI
+cat_api = CatApi()
 
 # Logging setup
 logging.basicConfig(

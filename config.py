@@ -61,3 +61,5 @@ class Config:
         EXCHANGE_RATES_API_LINK = env.str("EXCHANGE_RATES_API_LINK")
         EXCHANGE_RATES_API_TOKEN = env.str("EXCHANGE_RATES_API_TOKEN")
 
+    CAT_API_LINK = env.str("CAT_API_LINK")
+

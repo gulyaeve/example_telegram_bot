@@ -1,27 +1,7 @@
 import asyncio
-from dataclasses import dataclass
 
 from config import Config
 from utils.rest_api import RestAPI
-
-
-# @dataclass
-# class Weather:
-#     location_name: str
-#     description: str
-#     temp: int
-#     temp_min: int
-#     temp_max: int
-#     wind_speed: int
-#
-#     def __str__(self):
-#         msg = f"<b>Погода в {self.location_name}:</b>\n" \
-#               f"Сейчас <i>{self.description}</i>\n" \
-#               f"Температура: <i>{self.temp}</i>\n" \
-#               f"Минимальная температура: <i>{self.temp_min}</i>\n" \
-#               f"Максимальная температура: <i>{self.temp_max}</i>\n" \
-#               f"Скорость ветра: <i>{self.wind_speed}м/с</i>\n"
-#         return msg
 
 
 class ExchangeRatesApi(RestAPI):
